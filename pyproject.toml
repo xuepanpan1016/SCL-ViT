@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scl-vit"
+version = "0.1.0"
+description = "Spatially conditioned and locally refined diffusion Transformer scaffold"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "torchvision>=0.16", "Pillow>=9", "PyYAML>=6", "transformers>=4.40", "diffusers>=0.30", "safetensors>=0.4"]
+
+[project.optional-dependencies]
+eval = ["torch-fidelity>=0.3"]
+
+[tool.setuptools.packages.find]
+include = ["scl_vit*"]

@@ -1,0 +1,34 @@
+seed: 42
+data:
+  train_manifest: data/t2ithangka/train.jsonl
+  image_size: 256
+  batch_size: 24
+  num_workers: 4
+model:
+  latent_channels: 4
+  latent_size: 32
+  patch_size: 2
+  hidden_dim: 512
+  depth: 8
+  heads: 8
+  text_dim: 768
+  text_length: 77
+  spe: true
+  cae: true
+  lfr: true
+  cae_reduction: 4
+  dropout: 0.0
+diffusion:
+  timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+  cfg_dropout: 0.1
+  cfg_scale: 7.5
+training:
+  iterations: 100000
+  learning_rate: 0.0002
+  weight_decay: 0.3
+  checkpoint_dir: runs/scl_vit
+  # Replace with actual adapter/checkpoint paths before training.
+  autoencoder: null
+  text_encoder: null
